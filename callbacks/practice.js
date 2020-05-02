@@ -141,7 +141,9 @@ uniq(names, function(uniqArr){
 */
 
 function each(namesArr, cb){
-  namesArr.forEach(name => cb(name, pos))
+  namesArr.forEach((name, index) => {
+    return cb(name, index)
+  })
 }
 
 // Do not edit the code below.
@@ -159,7 +161,8 @@ each(names, function(item, indice){
   When the correct user object is found, invoke the callback with the user object as an argument.
 */
 
-function getUserById(users, id, cb){
+
+function getUserById(usersObj, id, cb){
   
 }
 

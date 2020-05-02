@@ -162,8 +162,11 @@ each(names, function(item, indice){
 */
 
 
-function getUserById(usersObj, id, cb){
-  
+function getUserById(usersObj, idToFind, cb){
+  let found = {}
+  usersObj.find(found => found.id === idToFind)
+
+  return cb(found)
 }
 
 

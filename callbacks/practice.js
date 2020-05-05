@@ -163,10 +163,12 @@ each(names, function(item, indice){
 
 
 function getUserById(usersObj, idToFind, cb){
-  let found = {}
-  usersObj.find(found => found.id === idToFind)
-
-  return cb(found)
+  let foundId = {}
+  for (let i = 0; i < usersObj.length; i++){
+    if (usersObj[i].id === idToFind) {
+      return cb(usersObj[i])
+    }
+  }
 }
 
 
